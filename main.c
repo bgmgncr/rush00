@@ -6,7 +6,7 @@
 /*   By: sekmekci <sekmekci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 10:40:44 by sekmekci          #+#    #+#             */
-/*   Updated: 2023/09/02 17:14:36 by sekmekci         ###   ########.fr       */
+/*   Updated: 2023/09/03 14:05:28 by sekmekci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	rush(int x, int y)
 		{
 			if (((b == a && a == 1) || (b == x && a == 1)))
 				ft_putchar('A');
-			if ((b > 2 && a > 2) && (b < x && a < y))
+			else if ((b > 2 && a > 2) && (b < x && a < y))
 				write(1, " ", 1);
-			if (((((b == a) && (a == y)) || (a == y && b == 1))) && (y >= 2))
+			else if (((b == 1) && (a == y)) || ((x == b) && (y == a)))
 				ft_putchar('C');
 			else 
 				ft_putchar('B');
@@ -45,7 +45,6 @@ void	rush(int x, int y)
 
 int	main(void)
 {
-			/*if (((x >= 3 || y >= 3) || ((a <= 2 && b > 2) || (b <= 2 && a > 2))) && ((b > 1 && b < x) || (a > 1 && a < y))) */
-	rush(3, 3);
+	rush(3, 4);
 	return (0);
 }
